@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 
 class MainModel extends ChangeNotifier{
-  String mainWord = '野球情報dayo';
+  String mainWord = '野球情報';
 
-  void changeMainWord(){
-    mainWord = '巨人';
+  void changeMainWordSe(){
+    mainWord = 'セ・リーグ';
     notifyListeners();
+  }
+  void changeMainWordPa(){
+    mainWord = 'パ・リーグ';
+    notifyListeners();
+
   }
 }

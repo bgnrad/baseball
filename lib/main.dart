@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'book_list_page.dart';
 import 'main_model.dart';
 
 void main() {
@@ -26,14 +27,34 @@ class MyApp extends StatelessWidget {
               return Center(
                 child: Column(
                   children: [
-                    Text(model.mainWord),
+                    Text(
+                      model.mainWord,
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
                     RaisedButton(
-                      child: Text('ボタン'),
+                      child: Text('セ'),
                       onPressed: (){
                         // 何かする
-                        model.changeMainWord();
+                        model.changeMainWordSe();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CentralLeague()),
+                        );
                       },
-                    )
+                    ),
+                    RaisedButton(
+                      child:Text('パ'),
+                      onPressed: (){
+                        model.changeMainWordPa();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PacificLeague()),
+                        );
+
+                      },
+                    ),
                   ],
                 ),
               );
